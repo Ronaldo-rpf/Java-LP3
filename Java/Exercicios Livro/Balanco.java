@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//tanto metodo quanto atributo, se for static nao precisa acessar por objeto.
+
 class Calcula{
     private float janeiro;
     private float fevereiro;
@@ -7,7 +9,10 @@ class Calcula{
     private float total = janeiro + fevereiro + marco;
 
     Calcula(){
-        
+        janeiro = 0;
+        fevereiro = 0;
+        marco = 0;
+        total = 0;
     }
 
     public void setJan(Scanner tec){
