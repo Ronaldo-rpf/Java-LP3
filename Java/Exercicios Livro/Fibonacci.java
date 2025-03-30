@@ -4,7 +4,8 @@ public class Fibonacci {
         System.out.println(j + "\n" + k);
         for (int i = 0; i <= 100; ){
             i = j + k;
-            System.out.println(i);
+            //System.out.println(i);
+            System.out.printf("J: %d     K: %d       %d\n", j, k, j + k);
             j = k;
             k = i;
         }
