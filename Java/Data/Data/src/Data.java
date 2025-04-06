@@ -9,21 +9,41 @@ public class Data {
         return ano;
     }
 
+    public int getMes(){
+        return mes;
+    }
+
+    public int getDia(){
+        return dia;
+    }
+
+    public void setAno(int _ano){
+        ano = _ano;
+    }
+
+    public void setMes(int _mes){
+        mes = _mes;
+    }
+
+    public void setDia(int _dia){
+        dia = _dia;
+    }
+
     public Data(){
         LocalDate sistema = LocalDate.now();
         mes = sistema.getMonthValue();
         dia = sistema.getDayOfMonth();
         ano = sistema.getYear();
     }
+
     public Data(int dia, int mes, int ano){
         this.dia = dia;
         this.mes = mes;
         this.ano = ano;
-
     }
 
     public Data (String data){
-        System.out.println(data.length());
+        //System.out.println(data.length());
         dia = Integer.parseInt(data.substring(0, 2));
         mes = Integer.parseInt(data.substring(3, 5));
         ano = Integer.parseInt(data.substring(6, 10));
@@ -32,12 +52,15 @@ public class Data {
     public Boolean dataValida(Data valida){
         int[] meses = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         if (valida.mes <= 0 || valida.mes > 12){
+            setar(valida);
             return false;
         }
         else if (valida.dia <= 0 || valida.dia > meses[valida.mes + 1]){
+            setar(valida);
             return false;
         }
         else if (valida.ano <= 1930 || valida.ano > getAno()){
+            setar(valida);
             return false;
         }
         else{
@@ -53,7 +76,16 @@ public class Data {
             return false;
         }
     }
+
+    private void setar(Data data){
+        LocalDate sistema = LocalDate.now();
+        data.mes = sistema.getMonthValue();
+        data.dia = sistema.getDayOfMonth();
+        data.ano = sistema.getYear();
+    }
+
+    public void mostrar(){
+        System.out.println("Dia: "+getDia()+"\nMes: "+getMes()+"\nAno: "+getAno());
+    }
     
 }
-
-NUNCA ACESSE DIRETAMETNE A VARIAVEL, É SEMPRE PELO GET OU PELO SET
