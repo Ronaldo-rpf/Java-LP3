@@ -43,10 +43,39 @@ public class Data {
     }
 
     public Data (String data){
-        //System.out.println(data.length());
         dia = Integer.parseInt(data.substring(0, 2));
         mes = Integer.parseInt(data.substring(3, 5));
         ano = Integer.parseInt(data.substring(6, 10));
+    }
+
+    public int calcularIdade(Data data){
+        Boolean aux = dataValida(data);
+        if (aux == false){
+            System.out.println("Data invalida, calculo encerrado.");
+            return 0;
+        }
+        Data hoje = new Data();
+        if (hoje.ano < data.ano || hoje.ano == data.ano){
+            System.out.println("Data invalida.");
+            return 0;
+        }
+        else if (hoje.mes == data.mes){
+            if (hoje.dia > data.dia){
+                return hoje.ano - data.ano - 1;
+            }
+            else if (hoje.dia == data.dia){
+                return hoje.ano - data.ano;
+            }
+            else{
+                return hoje.ano - data.ano;
+            }
+        }
+        else if (hoje.mes < data.mes){
+            return hoje.ano - data.ano - 1;
+        }
+        else{
+            return hoje.ano - data.ano;
+        }
     }
 
     public Boolean dataValida(Data valida){
@@ -85,7 +114,7 @@ public class Data {
     }
 
     public void mostrar(){
-        System.out.println("Dia: "+getDia()+"\nMes: "+getMes()+"\nAno: "+getAno());
+        System.out.println("Dia: "+dia+"\nMes: "+mes+"\nAno: "+ano);
     }
     
 }

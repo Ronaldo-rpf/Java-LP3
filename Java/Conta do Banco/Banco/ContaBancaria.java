@@ -1,7 +1,7 @@
 
 public class ContaBancaria{
     private double saldo;
-    private String titular;
+    private Cliente titular;
     private Data dataAbertura;
     private Data[] depositos = new Data[10];
     private Data[] saques = new Data[10];
@@ -10,8 +10,8 @@ public class ContaBancaria{
     private static int numSaques = 0;
     private static int numTransferecias = 0;
 
-    public ContaBancaria (String nome){
-        titular = nome;
+    public ContaBancaria (String nome, String cpf, Data nascimento){
+        titular = new Cliente(nome, cpf, nascimento);
         saldo = 0;
         Banco.incrementarConta();
         dataAbertura = new Data();
@@ -38,7 +38,7 @@ public class ContaBancaria{
     }
 
     public void exibirInformacoes(){
-        System.out.println("Titular: "+titular);
+        titular.exibirCliente();
         System.out.println("Saldo atual: " + saldo);
         System.out.println("Data de abertura da conta: ");
         dataAbertura.mostrar();
