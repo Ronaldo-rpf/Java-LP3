@@ -42,10 +42,6 @@ public class Conta {
         return saudo;
     }
 
-    public String getDataDeAbertura(){
-        return dataDeAbertura;
-    }
-
     public void setTitular(String nome){
         titular = nome;
     }
@@ -60,10 +56,6 @@ public class Conta {
 
     public void setSaudo(double valor){
         saudo = valor;
-    }
-
-    public void setDataDeAbertura(String data){
-        dataDeAbertura = data;
     }
 
     public void saca(double valor){
