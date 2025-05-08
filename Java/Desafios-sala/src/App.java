@@ -27,10 +27,11 @@ class ExportadordeDocumentos{
 }
 
 public class App{
-    public void exportacao(Documento c){
+    public static void exportacao(Documento c){
         c.exportar();
     }
     public static void main(String[] args){
+        /*
         Documento doc1 = new Documento();
         PDF doc2 = new PDF();
         Word doc3 = new Word();
@@ -39,7 +40,9 @@ public class App{
         exportador.exportarDocumento(doc1);
         exportador.exportarDocumento(doc2);
         exportador.exportarDocumento(doc3);
-
-
+         */
+        exportacao(new Documento());
+        exportacao(new PDF());
+        exportacao(new Word());
     }
 }
