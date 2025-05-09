@@ -26,7 +26,7 @@ class ExportadordeDocumentos{
     }
 }
 
-public class App{
+public class Polimorfismo{
     public static void exportacao(Documento c){
         c.exportar();
     }
