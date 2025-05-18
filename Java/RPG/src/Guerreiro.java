@@ -1,4 +1,4 @@
-public class Guerreiro extends Personagem{
+public class Guerreiro extends Personagem implements HabilidadeEspecial{
     private int escudo;
 
     public Guerreiro(String nome, int vida, int forca, int escudo){
@@ -8,7 +8,7 @@ public class Guerreiro extends Personagem{
 
     @Override
     public void atacar(){
-        System.out.println("Guerreiro atacou com " + (this.forca + 5) + " de forca.");
+        System.out.println("Guerreiro atacou causando " + (this.forca + 5) + " de dano.");
     }
 
     @Override
@@ -19,5 +19,12 @@ public class Guerreiro extends Personagem{
 
         System.out.println("Guerreiro recebeu " + (dano) + " de dano");
         this.vida -= dano;
+    }
+
+    @Override
+    public void usaHabilidadeEspecial(){
+        System.out.println("Guerreiro usou INVESTIDA e causou " + (((this.forca) + 5)*2) + " de dano.");
+        System.out.println("Seu escudo quebrou ao atacar.");
+        this.escudo = 0;
     }
 }
