@@ -1,4 +1,7 @@
-public class Dragao extends Personagem implements HabilidadeEspecial{
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Dragao extends Inimigo implements HabilidadeEspecial{
     private int escudo;
     private static int flag = 1;
 
@@ -7,6 +10,7 @@ public class Dragao extends Personagem implements HabilidadeEspecial{
         this.escudo = escudo;
     }
 
+    @Override
     public void defender(int dano){
         escudo -= dano;
         if (escudo <= 0 && flag == 1){
@@ -26,13 +30,21 @@ public class Dragao extends Personagem implements HabilidadeEspecial{
         }
     }
 
-    public void atacar(){
+    @Override
+    public int atacar(){
         System.out.println(this.nome + " atacou e causou " + this.forca + " de dano.");
-
+        return this.forca;
     }
 
-    public void usaHabilidadeEspecial(){
+    @Override
+    public int usaHabilidadeEspecial(){
         System.out.println(this.nome + " usou BOLA DE FOGO e causou " + this.forca*2 + " de dano.");
-
+        return this.forca*2;
     }
+
+    @Override
+    public int tomarDecisao(ArrayList<Personagem> lista, Random random){
+        return random.nextInt(lista.size());
+    }
+
 }

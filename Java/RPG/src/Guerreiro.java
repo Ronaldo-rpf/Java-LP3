@@ -7,8 +7,9 @@ public class Guerreiro extends Personagem implements HabilidadeEspecial{
     }
 
     @Override
-    public void atacar(){
+    public int atacar(){
         System.out.println("Guerreiro atacou causando " + (this.forca + 5) + " de dano.");
+        return (this.forca + 5);
     }
 
     @Override
@@ -22,9 +23,10 @@ public class Guerreiro extends Personagem implements HabilidadeEspecial{
     }
 
     @Override
-    public void usaHabilidadeEspecial(){
+    public int usaHabilidadeEspecial(){
         System.out.println("Guerreiro usou INVESTIDA e causou " + (((this.forca) + 5)*2) + " de dano.");
         System.out.println("Seu escudo quebrou ao atacar.");
         this.escudo = 0;
+        return (((this.forca) + 5)*2);
     }
 }

@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+import java.util.Random;
 
-public abstract class Personagem {
+public abstract class Inimigo {
     protected String nome;
     protected int vida;
     protected int forca;
 
-    public Personagem(String nome, int vida, int forca){
+    public Inimigo(String nome, int vida, int forca){
         this.nome = nome;
         this.vida = vida;
         this.forca = forca;
@@ -18,5 +20,6 @@ public abstract class Personagem {
         System.out.println("Nome: " + this.nome + "\nVida: " + this.vida + "\nForca: " + this.forca);
     }
 
+    protected abstract int tomarDecisao(ArrayList<Personagem> listaAliados, Random random);
 
 }

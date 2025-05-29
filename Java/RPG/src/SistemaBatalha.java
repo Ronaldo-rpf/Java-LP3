@@ -1,53 +1,33 @@
-import java.util.Scanner;
+import java.util.Random;
+import java.util.ArrayList;
 
 public class SistemaBatalha {
-
-    public SistemaBatalha(){
-        
-    }
+    private static ArrayList<Personagem> listaAliados = new ArrayList<>();
+    private static ArrayList<Inimigo> listaInimigos = new ArrayList<>();
+    private static int cont = 1;
 
     public void adiciona_aliado(Personagem pessoa){
-
+        listaAliados.add(pessoa);
     }
 
-    public void adicionar_inimigo(Personagem pessoa){
-
+    public void adicionar_inimigo(Inimigo pessoa){
+        listaInimigos.add(pessoa);
     }
 
     public void iniciar_batalha(){
-        Scanner teclado = new Scanner(System.in);
-        int escolha = 0;
-        System.out.println("Qual classe voce deseja ser no jogo?\n1 - Guerreiro\n2 - Mago\n3 - Arqueiro\n4 - Ladino\n5 - Clerigo");
-        System.out.print("Escolha: ");
-        escolha = Integer.parseInt(teclado.nextLine());
-        while(escolha != 1 && escolha != 2 && escolha != 3 && escolha != 4 && escolha != 5){
-            System.out.println("Opcao invalida, tente novamente.");
-            System.out.println("Qual classe voce deseja ser no jogo?\n1 - Guerreiro\n2 - Mago\n3 - Arqueiro\n4 - Ladino\n5 - Clerigo");
-            System.out.print("Escolha: ");
-            escolha = Integer.parseInt(teclado.nextLine());
+        int aux;
+        Random random = new Random();
+        System.out.println("Certo dia o grande" + listaAliados.get(1).nome + " estava escalando uam montanha com sua trupe de duas pessoas, o temido " + listaAliados.get(2).nome + " e o louvavel "+ listaAliados.get(3).nome+ ", e quando chegaram la em cima... \nSE DEPARARAM COM UM FUCKING DRAGAO!\nTodos se armaram e se prepararam para a batalha.");
+
+        System.out.println("\"UUUUUUUUUAAAAAAAAAAAAAAAAAHHHHH VOCES JAMAIS PEGARAM O TESOURO QUE NAO E MEU E DOS ANOOOOOOEEESSSSSSS!!!!!!\"");
+        System.out.println("A batalha comecou:");
+        while (listaAliados.size() != 0 && listaInimigos.size() != 0){
+            System.out.println("Turno " + cont + ":");
+            aux = listaInimigos.get(1).tomarDecisao(listaAliados, random);
+            
         }
-        switch (escolha){
-            case 1:
-                System.out.println("Voce escolhe a classe Guerreiro.");
-                break;
-            case 2:
-                System.out.println("Voce escolhe a classe Mago.");
-                break;
-            case 3:
-                System.out.println("Voce escolhe a classe Arqueiro.");
-                break;
-            case 4:
-                System.out.println("Voce escolhe a classe Ladino.");
-                break;
-            case 5:
-                System.out.println("Voce escolhe a classe Clerigo.");
-                break;
-            default:
-                break;
-        }
+
+
         
-
-
-        teclado.close();    
     } 
 }

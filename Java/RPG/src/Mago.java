@@ -7,15 +7,17 @@ public class Mago extends Personagem implements HabilidadeEspecial{
     }
 
     @Override
-    public void atacar(){
+    public int atacar(){
         if(this.mana <= 10){
             System.out.println("Mago atacou com " + (this.forca * 2) + " de dano.");
             System.out.println("Mago gastou 10 de mana.");
             this.mana-=10;
             System.out.println("Mana restante: " + this.mana);
+            return (this.forca * 2);
         }
         else
             System.out.println("Mago nao tem mana suficiente para atacar!");
+            return 0;
     }
 
     @Override
@@ -25,9 +27,10 @@ public class Mago extends Personagem implements HabilidadeEspecial{
     }
 
     @Override
-    public void usaHabilidadeEspecial(){
+    public int usaHabilidadeEspecial(){
         System.out.println("Mago usou TELEPORTE e recuperou 20 de mana.");
         this.mana += 20;
         System.out.println("Mana restante: " + this.mana);
+        return 0;
     }
 }

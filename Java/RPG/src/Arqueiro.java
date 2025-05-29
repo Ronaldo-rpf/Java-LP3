@@ -7,16 +7,18 @@ public class Arqueiro extends Personagem implements HabilidadeEspecial{
     }
 
     @Override
-    public void atacar(){
+    public int atacar(){
         if(this.flechas <= 1){
             System.out.println("Arqueiro tentou atacar mas nao tem flechas o suficiente.");
             System.out.println("Flechas restantes: " + this.flechas);
-            return;
+            return 0;
         }
-        else
+        else{
             System.out.println("Arqueiro atacou com " + (this.forca + 3) + " de dano.");
             this.flechas -= 1;
             System.out.println("Flechas restantes: " + this.flechas);
+            return (this.forca + 3);
+        }
     }
 
     @Override
@@ -26,16 +28,17 @@ public class Arqueiro extends Personagem implements HabilidadeEspecial{
     }
 
     @Override
-    public void usaHabilidadeEspecial(){
+    public int usaHabilidadeEspecial(){
         if (this.flechas >= 3){
             System.out.println("Arqueiro atacou com CHUVA DE FLECHAS causando " + (this.forca + 3) + " de dano a todos os inimigos.");
             this.flechas -= 3;
             System.out.println("Flechas restantes: " + this.flechas);
+            return (this.forca + 3);
         }
         else{
             System.out.println("Arqueiro tentou usar sua habilidade especial mas nao tem flechas o suficiente.");
             System.out.println("Flechas restantes: " + this.flechas);
-            return;
+            return 0;
         }
     }
 }

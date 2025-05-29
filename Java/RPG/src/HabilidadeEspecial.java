@@ -1,3 +1,3 @@
 public interface HabilidadeEspecial {
-    public void usaHabilidadeEspecial();
+    public int usaHabilidadeEspecial();
 }
