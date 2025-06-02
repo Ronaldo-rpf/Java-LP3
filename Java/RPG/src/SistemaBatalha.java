@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SistemaBatalha {
-    private static ArrayList<Personagem> listaAliados = new ArrayList<>();
-    private static ArrayList<Inimigo> listaInimigos = new ArrayList<>();
+    private ArrayList<Personagem> listaAliados = new ArrayList<>();
+    private ArrayList<Inimigo> listaInimigos = new ArrayList<>();
     private static int cont = 1;
 
     public void adiciona_aliado(Personagem pessoa){
@@ -19,7 +19,7 @@ public class SistemaBatalha {
         Scanner teclado = new Scanner(System.in);
         int aux;
         Random random = new Random();
-        System.out.println("Certo dia o grande" + listaAliados.get(1).nome + " estava escalando uam montanha com sua trupe de duas pessoas, o temido " + listaAliados.get(2).nome + " e o louvavel "+ listaAliados.get(3).nome+ ", e quando chegaram la em cima... \nSE DEPARARAM COM UM FUCKING DRAGAO!\nTodos se armaram e se prepararam para a batalha.");
+        System.out.println("Certo dia o grande " + listaAliados.get(0).nome + " estava escalando uam montanha com sua trupe de duas pessoas, o temido " + listaAliados.get(1).nome + " e o louvavel "+ listaAliados.get(2).nome+ ", e quando chegaram la em cima... \nSE DEPARARAM COM UM FUCKING DRAGAO!\nTodos se armaram e se prepararam para a batalha.");
 
         System.out.println("\"UUUUUUUUUAAAAAAAAAAAAAAAAAHHHHH VOCES JAMAIS PEGARAM O TESOURO QUE NAO E MEU E DOS ANOOOOOOEEESSSSSSS!!!!!!\"");
         System.out.println("A batalha comecou:");
@@ -33,13 +33,19 @@ public class SistemaBatalha {
                 listaAliados.get(i).mostrar_status();
             }
             System.out.println("Turno " + cont + ":");
-            aux = listaInimigos.get(1).tomarDecisao(listaAliados, random);
-            System.out.println(listaInimigos.get(1).nome + " vai atacar " + listaAliados.get(aux + 1).nome + ".");
+            aux = listaInimigos.get(0).tomarDecisao(listaAliados, random);
+            System.out.println(listaInimigos.get(0).nome + " vai atacar " + listaAliados.get(aux).nome + ".");
             if (cont % 2 == 0){
-                listaAliados.get(aux + 1).defender(listaInimigos.get(1).atacar());
+                listaAliados.get(aux).defender(listaInimigos.get(0).atacar());
             }
             else{
-                listaAliados.get(aux + 1).defender(listaInimigos.get(1).usaHabilidadeEspecial());
+                listaAliados.get(aux).defender(listaInimigos.get(0).usaHabilidadeEspecial());
+            }
+            for (int i = 0; i < listaAliados.size(); i++){
+                if (listaAliados.get(i).vida <= 0){
+                    System.out.println(listaAliados.get(i).nome + " morreu.");
+                    listaAliados.remove(i);
+                }
             }
             System.out.println();
             for (int i = 0; i <listaAliados.size(); i++){
@@ -77,12 +83,7 @@ public class SistemaBatalha {
                     listaInimigos.remove(i);
                 }
             }
-            for (int i = 0; i < listaAliados.size(); i++){
-                if (listaAliados.get(i).vida <= 0){
-                    System.out.println(listaAliados.get(i).nome + " morreu.");
-                    listaAliados.remove(i);
-                }
-            }
+            
             cont++;
         }
         cont = 0;

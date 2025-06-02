@@ -16,6 +16,7 @@ public abstract class Personagem implements HabilidadeEspecial{
 
     protected void mostrar_status(){
         System.out.println("Nome: " + this.nome + "\nVida: " + this.vida + "\nForca: " + this.forca);
+        System.out.println();
     }
 
 

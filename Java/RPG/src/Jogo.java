@@ -75,22 +75,32 @@ public class Jogo{
         classe = escolha(teclado);
         switch (classe){
             case 1:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Guerreiro ali1Gue = new Guerreiro(nome, 35, 13, 5);
                 jogo.adiciona_aliado(ali1Gue);
                 break;
             case 2:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Mago ali1Mag = new Mago(nome,  20, 30, 30);
                 jogo.adiciona_aliado(ali1Mag);
                 break;
             case 3:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Arqueiro ali1Arq = new Arqueiro(nome, 25, 25, 40);
                 jogo.adiciona_aliado(ali1Arq);
                 break;
             case 4:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Ladino ali1Lad = new Ladino(nome,  30, 15);
                 jogo.adiciona_aliado(ali1Lad);
                 break;
             case 5:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Clerigo ali1Cler = new Clerigo(nome, 25, 10, 50);
                 jogo.adiciona_aliado(ali1Cler);
                 break;
@@ -101,22 +111,32 @@ public class Jogo{
         classe = escolha(teclado);
         switch (classe){
             case 1:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Guerreiro ali2Gue = new Guerreiro(nome, 35, 13, 5);
                 jogo.adiciona_aliado(ali2Gue);
                 break;
             case 2:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Mago ali2Mag = new Mago(nome, 20, 30, 30);
                 jogo.adiciona_aliado(ali2Mag);
                 break;
             case 3:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Arqueiro ali2Arq = new Arqueiro(nome, 25, 25, 40);
                 jogo.adiciona_aliado(ali2Arq);
                 break;
             case 4:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Ladino ali2Lad = new Ladino(nome, 30, 15);
                 jogo.adiciona_aliado(ali2Lad);
                 break;
             case 5:
+                System.out.print("Qual sera nome dele: ");
+                nome = teclado.nextLine();
                 Clerigo ali2Cler = new Clerigo(nome, 25, 10, 50);
                 jogo.adiciona_aliado(ali2Cler);
                 break;
@@ -126,7 +146,7 @@ public class Jogo{
         System.out.println("Perfeito, agora vamos para a aventura!!!");
         Dragao bicho = new Dragao("Askelad", 50, 20, 20);
         jogo.adicionar_inimigo(bicho);
-
+        
         jogo.iniciar_batalha();
 
 
