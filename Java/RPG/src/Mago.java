@@ -1,4 +1,4 @@
-public class Mago extends Personagem implements HabilidadeEspecial{
+public class Mago extends Personagem{
     private int mana;
 
     public Mago(String nome, int vida, int forca, int mana){

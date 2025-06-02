@@ -1,4 +1,4 @@
-public class Arqueiro extends Personagem implements HabilidadeEspecial{
+public class Arqueiro extends Personagem{
     private int flechas;
 
     public Arqueiro(String nome, int vida, int forca, int flechas){

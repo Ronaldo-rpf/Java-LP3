@@ -1,4 +1,4 @@
-public class Ladino extends Personagem implements HabilidadeEspecial{
+public class Ladino extends Personagem{
     private Boolean stealth;
 
     public Ladino(String nome, int vida, int forca){

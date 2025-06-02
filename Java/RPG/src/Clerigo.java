@@ -1,4 +1,4 @@
-public class Clerigo extends Personagem implements HabilidadeEspecial{
+public class Clerigo extends Personagem{
     private int fe;
 
     public Clerigo(String nome, int vida, int forca, int fe){

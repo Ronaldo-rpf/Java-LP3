@@ -1,5 +1,5 @@
 
-public abstract class Personagem {
+public abstract class Personagem implements HabilidadeEspecial{
     protected String nome;
     protected int vida;
     protected int forca;

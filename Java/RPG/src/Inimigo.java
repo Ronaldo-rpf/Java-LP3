@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public abstract class Inimigo {
+public abstract class Inimigo implements HabilidadeEspecial{
     protected String nome;
     protected int vida;
     protected int forca;

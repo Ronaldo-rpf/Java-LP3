@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Dragao extends Inimigo implements HabilidadeEspecial{
+public class Dragao extends Inimigo{
     private int escudo;
     private static int flag = 1;
 

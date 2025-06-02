@@ -1,4 +1,4 @@
-public class Guerreiro extends Personagem implements HabilidadeEspecial{
+public class Guerreiro extends Personagem{
     private int escudo;
 
     public Guerreiro(String nome, int vida, int forca, int escudo){
